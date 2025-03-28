@@ -1,97 +1,93 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Wordpress Wrapper - App para gerenciar conteúdos de Wordpress
 
-# Getting Started
+## Objetivo
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+O objetivo deste projeto é criar uma interface mobile intuitiva para o gerenciamento de conteúdo de um site em Wordpress de um casal de artistas que trabalham com cerâmica tradicional. A aplicação permitirá que eles gerenciem suas obras, exposições e cursos, simplificando a administração e aumentando sua presença digital, facilitando a interação com sua comunidade.
 
-## Step 1: Start Metro
+## Funcionalidades
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 1. Tela Principal
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+A tela inicial da aplicação contém três botões principais:
 
-```sh
-# Using npm
-npm start
+- **Obras**
+- **Exposições**
+- **Cursos**
 
-# OR using Yarn
-yarn start
+Cada um desses botões leva a uma tela específica onde o casal pode adicionar novos conteúdos relacionados.
+
+### 2. Componente "Adicionar"
+
+Quando o usuário clica em qualquer um dos botões (Obras, Exposições ou Cursos), uma nova tela é carregada. A tela "Adicionar" possui:
+
+- Um **botão de voltar** no canto superior esquerdo.
+- Um **formulário dinâmico** no centro da tela, que varia de acordo com o tipo de conteúdo sendo adicionado (Obra, Exposição ou Curso).
+- Um **botão de confirmar** para salvar as informações inseridas.
+
+### 3. Tipos de Formulários
+
+#### **Obras**
+
+Campos:
+
+- Título
+- Ano
+- Descrição
+- Imagens
+
+#### **Exposições**
+
+Campos:
+
+- Título
+- Ano
+- Data de Início
+- Data de Fim
+- Local
+- Descrição
+- Imagens
+
+#### **Cursos**
+
+Campos:
+
+- Título
+- Data de Início
+- Data de Fim
+- Público-alvo
+- Descrição
+- Limite de participantes
+- Local
+- Imagens
+
+### 4. Integração com o WordPress
+
+Cada vez que um dos formulários for preenchido e o botão de **Confirmar** for pressionado, o aplicativo realizará uma **integração com a API do WordPress**. O post será enviado para o site com a tag correspondente ao tipo de conteúdo (Obra, Exposição ou Curso).
+
+- **Obras**: Tag "obra"
+- **Exposições**: Tag "exposicao"
+- **Cursos**: Tag "curso"
+
+## Tecnologias Utilizadas
+
+- **React Native**: Para o desenvolvimento do aplicativo mobile.
+- **WordPress API**: Para integrar o conteúdo do aplicativo ao site existente.
+- **Expo**: Para facilitar o desenvolvimento e testes rápidos no dispositivo.
+
+## Como Rodar o Projeto
+
+1. Clone o repositório do projeto.
+2. Navegue até a pasta do projeto no terminal.
+3. Instale as dependências com o comando:
+
+```bash
+   npm install
 ```
 
-## Step 2: Build and run your app
+4. Para rodar o aplicativo em um dispositivo Android, execute:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+npx react-native run-android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Este projeto foi desenvolvido como parte de uma atividade de extensão para ajudar artistas locais a gerenciar suas produções e divulgar seu trabalho de forma mais eficiente. 🎨📱
